@@ -22,6 +22,7 @@ var sum1 = 0;
 
 var groupByOrigin =
     from report in reports
+    orderby report.Product
     group report by report.Origin;
 
 foreach (var origin in groupByOrigin)
@@ -50,7 +51,7 @@ foreach (var origin in groupByOrigin)
 
     Console.WriteLine($"\t Sales: {origin.Key}  {origin.Count()}");
 
-    Console.WriteLine($"\t Sales: {origin.Key}  {sum}");
+    Console.WriteLine($"\t Total Price: {origin.Key}  {sum}");
 
     sum = 0;
 
